@@ -6,6 +6,8 @@
 
 
 """ Lambda with builtin functions"""
+from pygments.lexer import words
+
 " Using Lambda function with map function"
 
 # Numbers = [4, 5, 6, 7, 8, 9, 10]
@@ -111,14 +113,104 @@ for s in Sales_data:
         print("Total: ", total)
         print("High Sale: ", high_sale)
 
-marks = [40, 80, 90, 30, 70]
-total = 0
-high_marks = 0
-for m in marks:
-    total += m
+# marks = [40, 80, 90, 30, 70]
+# total = 0
+# high_marks = 0
+# for m in marks:
+#     total += m
+#
+#     if m > 50:
+#         high_marks += 1
+#
+#         print("Total Marks: ", total)
+#         print("How many marks > 50: ", high_marks)
+#
+import pandas as pd
+# data = {
+#     "Day": ["Mon", "Tue", "Wed", "Thus", "Fri"],
+#     "Sale": [220, 300, 350, 250, 320]
+# }
 
-    if m > 50:
-        high_marks += 1
+# df = pd.DataFrame(data)
+# print(df)
+#
+# for s in df["Sale"]:
+#     print(s)
+#
+# for index, row in df.iterrows():
+#     print(row["Day"], row["Sale"])
 
-        print("Total Marks: ", total)
-        print("How many marks > 50: ", high_marks)
+# for index, row in df.iterrows():
+#     if row["Sale"] > 250:
+#         print(row["Day"], "High Sale")
+
+
+# import pandas as pd
+# pf = pd.read_excel("sales_data.xlsx")
+# print(pf)
+
+def greet_user(name):
+    print("Hello, ", name)
+
+greet_user("Bakul")
+
+def login(username):
+    print(f"Welcome {username}!")
+
+login("Md Sazzatul Miraz Bakul")
+
+def signup(username, password):
+    print(f"{username} {password}")
+
+signup("MdSazzatul", 1223)
+
+
+def square(number):
+    return number * number
+result = square(12)
+print(result)
+
+def celcius_to_farenheit(c):
+    return (c * 9/5) + 32
+print(celcius_to_farenheit(39))
+
+def full_name(first, last):
+    return first + " " + last
+print(full_name("Md Sazzatul Miraz", "Bakul"))
+
+def total_size(file1, file2):
+    return file1 + file2
+print(total_size(200, 300))
+
+def power(base, exponent= 2):
+    return base ** exponent
+print(power(5))
+print(power(5, 3))
+
+def resize(width, height=100):
+    return f"image resized to {width}*{height}"
+print(resize(200))
+print(resize(100, 200))
+
+""""Keyword Argument"""
+def create_profile(Name, Age, City):
+    print(Name, Age, City)
+
+create_profile(Name = "Bakul", Age= 28, City= "pesaro")
+
+def analyze_text(text):
+    length = len(text)
+    words = len(text.split())
+    return length, words
+l, w = analyze_text("Python is fun")
+print()
+
+print("length: ", l)
+print("words: ", w)
+
+def number_info(n):
+    return n, n*n, n*n*n
+num, square, cube = number_info(5)
+print(num)
+print(square)
+print(cube)
